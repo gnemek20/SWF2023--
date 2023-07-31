@@ -8,6 +8,11 @@ const routes = [
     path: '/',
     name: 'landing',
     component: () => import('@/views/Landing.vue')
+  },
+  {
+    path: '/community',
+    name: 'community',
+    component: () => import('@/views/Community.vue')
   }
 ]
 

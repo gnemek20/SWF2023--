@@ -24,6 +24,12 @@ button:hover {
   background-color: bisque;
 }
 
+hr {
+  height: 1px;
+  border: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
 .block {
   display: block;
 }
@@ -62,6 +68,10 @@ button:hover {
 
 .absolute {
   position: absolute !important;
+}
+
+.fixed {
+  position: fixed !important;
 }
 
 .full-width {

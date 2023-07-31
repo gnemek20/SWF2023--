@@ -6,10 +6,10 @@
         <div class="title flex full-width justify-center">
           <h2 class="text-center">Seoul Web 3.0 Festival</h2>
         </div>
-        <div class="sign flex flex-column full-width full-height">
+        <div class="sign flex flex-column full-width full-height" @keydown.enter="$push('/community')">
           <input type="text">
           <input type="password">
-          <button>Sign In</button>
+          <button @click="$push('/community')">Sign In</button>
         </div>
       </div>
     </div>
