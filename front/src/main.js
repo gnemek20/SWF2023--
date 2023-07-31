@@ -5,9 +5,8 @@ import store from './store'
 
 Vue.config.productionTip = false
 
-import { defaultCss, designCss } from './styles/index.js'
+import { defaultCss } from './styles/index.js'
 Vue.use(defaultCss)
-Vue.use(designCss)
 
 new Vue({
   router,
