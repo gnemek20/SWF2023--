@@ -26,7 +26,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #Landing {
   width: 100vw;
   height: 100vh;

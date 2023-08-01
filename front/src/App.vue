@@ -14,4 +14,8 @@
   -ms-user-select: none;
   user-select: none;
 }
+
+body {
+  background-color: #F0F2F5
+}
 </style>

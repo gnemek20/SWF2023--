@@ -23,7 +23,7 @@ export default {
       this.$refs[color[(count + 2) % 3]].className = `${color[(count + 2) % 3]} none`;
 
       count++;
-    }, 8000)
+    }, 5000)
   },
   beforeDestroy() {
     clearInterval(this.interval);

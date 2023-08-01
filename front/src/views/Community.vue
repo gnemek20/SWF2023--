@@ -9,13 +9,13 @@
       <div class="area flex flex-column">
         <SectionVue>
           <div class="uploadArea flex justify-center" ref="uploadArea">
-            <button ref="uploadButton" @click="clickedUploadButton">upload</button>
+            <button ref="uploadButton" @click="clickedUploadButton">Image Upload</button>
             <div class="uploadInput flex justify-center" ref="uploadInput">
               <div class="flex full-width full-height">
-                <label class="flex justify-center align-center full-width full-height pointer" for="inputImage">
-                  <h3>이미지 업로드</h3>
+                <label class="flex justify-center align-center full-width full-height pointer" for="inputImages">
+                  <h3>Image Upload</h3>
                 </label>
-                <input id="inputImage" class="none" type="file" accept="image/*" multiple>
+                <input id="inputImages" ref="inputImages" class="none" type="file" accept="image/*" @change="uploadedImages" multiple>
               </div>
             </div>
           </div>
@@ -23,7 +23,7 @@
         <hr>
         <SectionVue>
           <div class="flex justify-center">
-            <p>당신의 멋진 모습을 보여주세요!</p>
+            <p>Show off Your Awesome Side</p>
           </div>
         </SectionVue>
       </div>
@@ -58,16 +58,20 @@ export default {
       this.$refs['uploadInput'].style.width = '100%';
       this.$refs['uploadInput'].style.height = '100px';
       this.$refs['uploadArea'].style.height = '100%';
+    },
+    uploadedImages() {
+      const input = this.$refs['inputImages'];
+      const images = input.files;
+
+      // if (images.length > 0) {
+
+      // }
     }
   }
 }
 </script>
 
-<style>
-body {
-  background-color: #F0F2F5;
-}
-
+<style scoped>
 hr {
   margin: 0 20px;
 }
@@ -115,7 +119,7 @@ img {
   height: 0px;
   overflow: hidden;
   border: 5px dashed white;
-  transition: all 1s;
+  transition: all 0.8s;
 }
 
 .uploadInput:hover {
