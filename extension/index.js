@@ -1,5 +1,6 @@
-const address = 'https://port-0-waatack-6g2llfkyykgm.sel3.cloudtype.app';
-// const address = 'http://locahost:3000';
+// const address = 'https://port-0-swf2023-suv-ac2nlksh0qg9.sel4.cloudtype.app';
+// const address = 'https://port-0-waatack-6g2llfkyykgm.sel3.cloudtype.app';
+const address = 'http://locahost:3000';
 
 let checkLocationInterval;
 let checkImageInterval;
@@ -7,11 +8,11 @@ let checkImageInterval;
 checkLocation();
 
 function post(location, form) {
+
+  console.log(location, form)
   return fetch(`${address}${location}`, {
     method: 'POST',
-    body: JSON.stringify({
-      form: form
-    })
+    body: form
   })
 }
 
@@ -42,10 +43,17 @@ async function uploadImage(file) {
   const formData = new FormData();
   formData.append('image', file);
 
-  // await post('/uploadImage', formData).then((res) => {
-  //   console.log(res);
-  // });
-  await fetch(`${address}/drive/list`).then((response) => response.json()).then((result) => {
+  // console.log(file);
+  // await fetch('https://port-0-swf2023-suv-ac2nlksh0qg9.sel4.cloudtype.app/uploadImage', {
+  //   method: "POST",
+  //   body: formData,
+  // }).then((res) => res.json()).then((data) => {
+  //   console.log(data);
+  // }) 
+  await post('/uploadImage', formData).then((response) => response.json()).then((result) => {
     console.log(result);
   })
+  // await fetch(`${address}/drive/list`).then((response) => response.json()).then((result) => {
+  //   console.log(result);
+  // })
 }

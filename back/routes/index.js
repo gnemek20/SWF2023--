@@ -12,6 +12,7 @@ router.get('/', function(req, res, next) {
 // POST METHOD
 router.post('/uploadImage', upload.any(), (req, res) => {
   const { file } = req;
+  console.log(req);
   console.log(file);
 
   res.status(200).send();
